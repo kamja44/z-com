@@ -9,7 +9,7 @@ interface ILayout {
 export default function Layout({ children, modal }: ILayout) {
   return (
     <div className={styles.container}>
-      Before login Layout {children}
+      {children}
       {modal}
     </div>
   );
