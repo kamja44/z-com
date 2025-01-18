@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { MSWProvider } from "@/_component/MSWComponent";
+import { MSWProvider } from "./_component/MSWComponent";
+import AuthSession from "./_component/AuthSession";
 
 if (
   process.env.NEXT_RUNTIME === "nodejs" &&
@@ -26,7 +27,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div>
-          <MSWProvider>{children}</MSWProvider>
+          <MSWProvider>
+            <AuthSession>{children}</AuthSession>
+          </MSWProvider>
         </div>
       </body>
     </html>

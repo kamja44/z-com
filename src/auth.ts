@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { NextResponse } from "next/server";
 export const {
   handlers: { GET, POST },
   auth,
@@ -32,7 +33,7 @@ export const {
         console.log("user", user);
         return {
           email: user.id,
-          name: user.nickname,
+          name: user.name,
           image: user.image,
           ...user,
         };
